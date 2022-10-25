@@ -1,2 +1,2 @@
-main.o: main.cpp Thing.cpp
-	g++ main.cpp Thing.cpp -o main.o
+main.o: main.cpp Thing.cpp Time.cpp
+	g++ main.cpp Thing.cpp Time.cpp -o main.o

@@ -7,7 +7,7 @@ class Thing {
   private:
     string name;
   public:
-    Thing();
+    Thing() {};
     Thing(string);
     string getName();
 };

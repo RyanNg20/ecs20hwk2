@@ -1,7 +1,7 @@
 #include "Thing.h"
+#include "Time.h"
 
 int main () {
-  Thing Emily{"Emily"};
-
-  cout << Emily.getName();
+  Time wolf{18, 10, 50};
+  cout << wolf.getSTime();
 }

@@ -1,7 +1,5 @@
 #include "Thing.h"
 
-Thing::Thing() {}
-
 Thing::Thing(string personName) {
   name = personName;
 }
