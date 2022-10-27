@@ -10,6 +10,7 @@ class Thing {
     Thing() {};
     Thing(string);
     string getName();
+    Json::Value dump2JSON();
 };
 
 #endif

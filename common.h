@@ -14,6 +14,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <jsoncpp/json/json.h>
+#include <jsoncpp/json/value.h>
+#include <jsoncpp/json/reader.h>
+#include <jsoncpp/json/writer.h>
+
 using namespace std;
 
 #endif
