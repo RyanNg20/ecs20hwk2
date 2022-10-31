@@ -1,3 +1,4 @@
+//author: Ryan Ng
 #include "Time.h"
 
 Time::Time() {}

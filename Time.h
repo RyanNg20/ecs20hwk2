@@ -1,3 +1,4 @@
+//author: Ryan Ng
 #ifndef TIME_H
 #define TIME_H
 

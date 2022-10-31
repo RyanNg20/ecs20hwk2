@@ -4,19 +4,13 @@
 #ifndef GPS_
 #define GPS_
 
-class GPS{
-
+class GPS {
     private:
-
       string city;
       string country;
-
     public:
-
       GPS(string theCity, string theCountry);
-
       void getGps();
-
 };
 
 #endif

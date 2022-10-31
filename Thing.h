@@ -1,3 +1,4 @@
+//author: Ryan Ng
 #ifndef THING_H
 #define THING_H
 

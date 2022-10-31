@@ -1,4 +1,4 @@
 LDFLAGS = -ljsoncpp
 
-main.o: main.cpp Thing.cpp Time.cpp
-	g++ main.cpp Person.cpp $(LDFLAGS) -o person
+main.o: main.cpp Person.cpp Time.cpp Thing.cpp Gps.cpp
+	g++ main.cpp Person.cpp Time.cpp Thing.cpp Gps.cpp $(LDFLAGS) -o main.o

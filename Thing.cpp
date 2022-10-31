@@ -1,3 +1,4 @@
+//author: Ryan Ng
 #include "Thing.h"
 
 Thing::Thing(string tempName) {
