@@ -1,4 +1,6 @@
 //author: Armin Irvije
+#ifndef PERSON_H
+#define PERSON_H
 #include "common.h"
 
 class Person{
@@ -14,3 +16,5 @@ public:
     string getPerson();
 
 };
+
+#endif
