@@ -10,4 +10,5 @@ int main () {
   Person redRidingHood("Little Red Riding Hood");
 
   cout << redRidingHood.getPerson() << "\n";
+  
 }
