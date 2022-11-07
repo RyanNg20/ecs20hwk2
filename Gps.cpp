@@ -6,7 +6,15 @@ GPS::GPS(string theCity, string theCountry) {
     country = theCountry;
 }
 
-void GPS::getGps() {
-    //cout << "GPS:\n";
-    cout << city << ", " << country << "\n";
-}   
+string GPS::getGps() {
+    string location = city + "," + country;
+    return location;
+}
+
+Json::Value GPS::dump2JSON() {
+    Json::Value result;
+    result["city"] = city;
+    result["country"] = country;
+
+    return result;
+}

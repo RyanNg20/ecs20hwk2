@@ -19,3 +19,13 @@ string Time::getSTime() {
   if (hour > 12) return to_string(hour - 12) + ":" + to_string(minute) + " pm";
   else return to_string(hour) + ":" + to_string(minute) + " am";
 }
+
+Json::Value Time::dump2JSON() {
+  Json::Value result;
+
+  result["hour"] = hour;
+  result["minute"] = minute;
+  result["second"] = second;
+
+  return result;
+}

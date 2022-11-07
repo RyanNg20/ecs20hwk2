@@ -9,8 +9,10 @@ class GPS {
       string city;
       string country;
     public:
+      GPS() {};
       GPS(string theCity, string theCountry);
-      void getGps();
+      string getGps();
+      Json::Value dump2JSON();
 };
 
 #endif
