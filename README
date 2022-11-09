@@ -1,0 +1,6 @@
+Ryan Ng: 920482591
+
+run "make"
+run "gdb"
+run "file main.o"
+run "run"
