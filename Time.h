@@ -14,7 +14,7 @@ class Time {
     Time(int, int, int);
     string getTime();
     string getSTime();
-    Json::Value dump2JSON();
+    virtual Json::Value dump2JSON();
 };
 
 #endif

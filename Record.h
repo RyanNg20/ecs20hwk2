@@ -19,7 +19,7 @@ class Record{
     GPS gps;
     Record() {};
     Record(Thing *, Person *, Time, GPS, int, int);
-    Json::Value dump2JSON();
+    virtual Json::Value dump2JSON();
 };
 
 #endif

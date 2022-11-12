@@ -12,7 +12,7 @@ class GPS {
       GPS() {};
       GPS(string theCity, string theCountry);
       string getGps();
-      Json::Value dump2JSON();
+      virtual Json::Value dump2JSON();
 };
 
 #endif

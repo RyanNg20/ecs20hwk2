@@ -11,7 +11,7 @@ class Thing {
     Thing() {};
     Thing(string);
     string getName();
-    Json::Value dump2JSON();
+    virtual Json::Value dump2JSON();
 };
 
 #endif

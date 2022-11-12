@@ -10,7 +10,7 @@ class Person {
         Person() {};
         Person(string person);
         string getPerson();
-        Json::Value dump2JSON();
+        virtual Json::Value dump2JSON();
 };
 
 #endif
