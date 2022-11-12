@@ -29,3 +29,9 @@ Json::Value Time::dump2JSON() {
 
   return result;
 }
+
+void Time::JSON2Object(Json::Value json) {
+    hour = stoi(json["hour"].asString());
+    minute = stoi(json["minute"].asString());
+    second = stoi(json["second"].asString());
+}

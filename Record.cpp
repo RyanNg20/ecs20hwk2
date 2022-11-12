@@ -32,7 +32,19 @@ Json::Value Record::dump2JSON() {
   result["time"] = time.dump2JSON();
   result["gps"] = gps.dump2JSON();
 
-  cout << result.toStyledString();
-
   return result;
+}
+
+void Record::JSON2Object(Json::Value json) {
+  this->Npeople = Npeople;
+  this->Nthings = Nthings;
+
+  gps.JSON2Object(json["gps"]);
+  time.JSON2Object(json["time"]);
+  for (int i = 0; i < Npeople; i++) {
+    people[i].JSON2Object(json["people"]["person" + to_string(i)]);
+  }
+  for (int i = 0; i < Nthings; i++) {
+    things[i].JSON2Object(json["things"]["thing" + to_string(i)]);
+  }
 }

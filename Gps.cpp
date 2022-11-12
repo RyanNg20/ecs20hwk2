@@ -15,6 +15,10 @@ Json::Value GPS::dump2JSON() {
     Json::Value result;
     result["city"] = city;
     result["country"] = country;
-
     return result;
+}
+
+void GPS::JSON2Object(Json::Value json) {
+    city = json["city"].asString();
+    country = json["country"].asString();
 }

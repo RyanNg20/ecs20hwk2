@@ -14,3 +14,7 @@ Json::Value Person::dump2JSON(){
     result["name"] = name;
     return result;
 }
+
+void Person::JSON2Object(Json::Value json) {
+    name = json["name"].asString();
+}

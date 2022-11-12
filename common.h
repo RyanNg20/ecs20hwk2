@@ -3,6 +3,7 @@
 
 #include <strings.h>
 #include <string>
+#include <cstring>
 #include <iostream>
 #include <stdio.h>
 #include <iomanip>
@@ -19,6 +20,15 @@
 #include <jsoncpp/json/reader.h>
 #include <jsoncpp/json/writer.h>
 
+#include <arpa/inet.h>
+
 using namespace std;
+
+// utility functions
+void myPrintLog(std::string content, std::string fname);
+int myParseJSON(std::string input, Json::Value * jv_ptr);
+char *myFile2String(char *f_name);
+int myFile2JSON(char *f_name, Json::Value * jv_ptr);
+int myJSON2File(char *f_name, Json::Value * jv_ptr);
 
 #endif

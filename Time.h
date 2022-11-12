@@ -15,6 +15,7 @@ class Time {
     string getTime();
     string getSTime();
     Json::Value dump2JSON();
+    void JSON2Object(Json::Value);
 };
 
 #endif

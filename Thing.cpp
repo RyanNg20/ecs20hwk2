@@ -15,3 +15,6 @@ Json::Value Thing::dump2JSON() {
   
   return result;
 }
+void Thing::JSON2Object(Json::Value json) {
+    name = json["name"].asString();
+}
