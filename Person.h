@@ -11,7 +11,7 @@ class Person {
         Person(string person);
         string getPerson();
         Json::Value dump2JSON();
-        void JSON2Object(Json::Value);
+        virtual void JSON2Object(Json::Value);
 };
 
 #endif

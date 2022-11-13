@@ -20,7 +20,7 @@ class Record{
     Record() {};
     Record(Thing *, Person *, Time, GPS, int, int);
     Json::Value dump2JSON();
-    void JSON2Object(Json::Value);
+    virtual void JSON2Object(Json::Value);
 };
 
 #endif

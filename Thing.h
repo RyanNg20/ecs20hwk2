@@ -12,7 +12,7 @@ class Thing {
     Thing(string);
     string getName();
     Json::Value dump2JSON();
-    void JSON2Object(Json::Value);
+    virtual void JSON2Object(Json::Value);
 };
 
 #endif
