@@ -1,0 +1,21 @@
+{
+   "gps" : {
+      "city" : "San Ramon",
+      "country" : "United States"
+   },
+   "people" : {
+      "person0" : {
+         "name" : "Little Red Riding Hood"
+      }
+   },
+   "things" : {
+      "thing0" : {
+         "name" : "cap"
+      }
+   },
+   "time" : {
+      "hour" : 8,
+      "minute" : 10,
+      "second" : 50
+   }
+}

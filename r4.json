@@ -1,0 +1,17 @@
+{
+   "gps" : {
+      "city" : "UC Davis",
+      "country" : "United States"
+   },
+   "people" : {
+      "person0" : {
+         "name" : "grandma"
+      }
+   },
+   "things" : null,
+   "time" : {
+      "hour" : 22,
+      "minute" : 10,
+      "second" : 50
+   }
+}

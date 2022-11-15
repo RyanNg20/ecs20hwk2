@@ -1,0 +1,20 @@
+{
+   "gps" : {
+      "city" : "CA99",
+      "country" : "United States"
+   },
+   "people" : {
+      "person0" : {
+         "name" : "Little Red Riding Hood"
+      },
+      "person1" : {
+         "name" : "wolf"
+      }
+   },
+   "things" : null,
+   "time" : {
+      "hour" : 14,
+      "minute" : 10,
+      "second" : 50
+   }
+}

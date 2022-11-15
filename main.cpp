@@ -110,24 +110,33 @@ int main () {
 
   Record r4{things2, people2, night2, trees2, 1, 0};
 
-  char fileName[7] = {'r', 'e', 'c', 'o', 'r', 'd', 's'}; //name of the file that we will put records in
-  Json::Value jsonIn;
-  Json::Value jsonOut;
+  char r1Name[8] = {'r', '1', '.', 'j', 's', 'o', 'n'}; //name of the file that we will put records in
+  char r2Name[8] = {'r', '2', '.', 'j', 's', 'o', 'n'}; //name of the file that we will put records in
+  char r3Name[8] = {'r', '3', '.', 'j', 's', 'o', 'n'}; //name of the file that we will put records in
+  char r4Name[8] = {'r', '4', '.', 'j', 's', 'o', 'n'}; //name of the file that we will put records in
+  Json::Value json1 = one.dump2JSON();
+  Json::Value json2 = two.dump2JSON();
+  Json::Value json3 = three.dump2JSON();
+  Json::Value json4 = four.dump2JSON();
+  Json::Value json1Out;
+  Json::Value json2Out;
+  Json::Value json3Out;
+  Json::Value json4Out;
 
-  //combine all of the Json::Value's to make jsonIn
-  jsonIn["r1"] = one.dump2JSON();
-  jsonIn["r2"] = two.dump2JSON();
-  jsonIn["r3"] = three.dump2JSON();
-  jsonIn["r4"] = four.dump2JSON();
-
-  myJSON2File(fileName, &jsonIn); //make json file using jsonIn
-  myFile2JSON(fileName, &jsonOut); //read read json file and shove it into jsonOut
+  myJSON2File(r1Name, &json1); //make json file using jsonIn
+  myJSON2File(r2Name, &json2); //make json file using jsonIn
+  myJSON2File(r3Name, &json3); //make json file using jsonIn
+  myJSON2File(r4Name, &json4); //make json file using jsonIn
+  myFile2JSON(r1Name, &json1Out); //read read json file and shove it into jsonOut
+  myFile2JSON(r2Name, &json2Out); //read read json file and shove it into jsonOut
+  myFile2JSON(r3Name, &json3Out); //read read json file and shove it into jsonOut
+  myFile2JSON(r4Name, &json4Out); //read read json file and shove it into jsonOut
 
   //convert Json to object using jsonOut
-  r1.JSON2Object(jsonOut["r1"]);
-  r2.JSON2Object(jsonOut["r2"]);
-  r3.JSON2Object(jsonOut["r3"]);
-  r4.JSON2Object(jsonOut["r4"]);
+  r1.JSON2Object(json1Out);
+  r2.JSON2Object(json2Out);
+  r3.JSON2Object(json3Out);
+  r4.JSON2Object(json4Out);
 
   //print Json::Value's to console
   cout << r1.dump2JSON().toStyledString();
