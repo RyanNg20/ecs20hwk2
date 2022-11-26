@@ -1,10 +1,10 @@
 LDFLAGS = -ljsoncpp
 
-main: main.o Person.o Gps.o Thing.o Time.o Record.o json.cpp
-	g++ main.o Person.o Gps.o Thing.o Time.o Record.o json.cpp $(LDFLAGS) -o main
+client: client.o Person.o Gps.o Thing.o Time.o Record.o json.cpp
+	g++ client.o Person.o Gps.o Thing.o Time.o Record.o json.cpp $(LDFLAGS) -o client
 
-main.o: main.cpp common.h json.cpp
-	g++ -c json.cpp main.cpp $(LDFLAGS)
+client.o: client.cpp common.h json.cpp
+	g++ -c json.cpp client.cpp $(LDFLAGS)
 
 Person.o: Person.cpp Person.h
 	g++ -c Person.cpp $(LDFLAGS)
@@ -20,3 +20,5 @@ Time.o: Time.cpp Time.h
 
 Record.o: Record.cpp Record.h
 	g++ -c Record.cpp $(LDFLAGS)
+
+

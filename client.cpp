@@ -3,6 +3,9 @@
 #include "Person.h"
 #include "Gps.h"
 #include "Record.h"
+#include <jsonrpccpp/client/connectors/httpclient.h>
+
+using namespace jsonrpc;
 
 int main () {
   Time morning{8, 10, 50};
@@ -139,8 +142,8 @@ int main () {
   r4.JSON2Object(json4Out);
 
   //print Json::Value's to console
-  cout << r1.dump2JSON().toStyledString();
-  cout << r2.dump2JSON().toStyledString();
-  cout << r3.dump2JSON().toStyledString();
-  cout << r4.dump2JSON().toStyledString();
+  // cout << r1.dump2JSON().toStyledString();
+  // cout << r2.dump2JSON().toStyledString();
+  // cout << r3.dump2JSON().toStyledString();
+  // cout << r4.dump2JSON().toStyledString();
 }
