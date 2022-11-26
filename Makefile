@@ -1,4 +1,4 @@
-LDFLAGS = -ljsoncpp
+LDFLAGS = -ljsoncpp -lmicrohttpd -ljsonrpccpp-common -ljsonrpccpp-server -ljsonrpccpp-client
 
 all: server client
 

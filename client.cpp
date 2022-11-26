@@ -3,6 +3,7 @@
 #include "Person.h"
 #include "Gps.h"
 #include "Record.h"
+#include "client.h"
 #include <jsonrpccpp/client/connectors/httpclient.h>
 
 using namespace jsonrpc;
@@ -146,4 +147,19 @@ int main () {
   // cout << r2.dump2JSON().toStyledString();
   // cout << r3.dump2JSON().toStyledString();
   // cout << r4.dump2JSON().toStyledString();
+
+  HttpClient httpclient("http://127.0.0.1:4000");
+  client myClient(httpclient, JSONRPC_CLIENT_V2);
+  Json::Value myv;
+
+  Json::Value test;
+
+  test["location"] = "test";
+
+  try {
+    // myv = myClient.move(test.toStyledString());
+  } catch (JsonRpcException &e) {
+    cerr << e.what() << endl;
+  }
+  cout << myv.toStyledString() << std::endl;
 }

@@ -26,32 +26,6 @@ class client : public jsonrpc::Client
             else
                 throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
         }
-        Json::Value search(const std::string& action, const std::string& class_id, const std::string& object_id) throw (jsonrpc::JsonRpcException)
-        {
-            Json::Value p;
-            p["action"] = action;
-            p["class_id"] = class_id;
-            p["object_id"] = object_id;
-            Json::Value result = this->CallMethod("search",p);
-            if (result.isObject())
-                return result;
-            else
-                throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
-        }
-        Json::Value dump2JSON(const std::string& action, const std::string& arguments, const std::string& class_id, const std::string& host_url, const std::string& object_id) throw (jsonrpc::JsonRpcException)
-        {
-            Json::Value p;
-            p["action"] = action;
-            p["arguments"] = arguments;
-            p["class_id"] = class_id;
-            p["host_url"] = host_url;
-            p["object_id"] = object_id;
-            Json::Value result = this->CallMethod("dump2JSON",p);
-            if (result.isObject())
-                return result;
-            else
-                throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
-        }
 };
 
 #endif //JSONRPC_CPP_STUB_CLIENT_H_

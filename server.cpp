@@ -4,44 +4,44 @@
 #include "client.h"
 #include <jsonrpccpp/client/connectors/httpclient.h>
 
-// using namespace jsonrpc;
+using namespace jsonrpc;
 
-// class MyServer : public server
-// {
-// public:
-//   MyServer(AbstractServerConnector &connector, serverVersion_t type);
-//   virtual Json::Value move(const std::string& action,
-// 			   const std::string& class_id,
-// 			   const Json::Value& json_object,
-// 			   const Json::Value& location,
-// 			   const std::string& object_id);
-//   virtual Json::Value search(const std::string& action,
-// 			     const std::string& class_id,
-// 			     const std::string& object_id);
-//   virtual Json::Value dump2JSON(const std::string& action,
-// 				const std::string& arguments,
-// 				const std::string& class_id,
-// 				const std::string& host_url,
-// 				const std::string& object_id);
-// };
+class MyServer : public server
+{
+public:
+  MyServer(AbstractServerConnector &connector, serverVersion_t type);
+  virtual Json::Value move(const std::string& action,
+			   const std::string& class_id,
+			   const Json::Value& json_object,
+			   const Json::Value& location,
+			   const std::string& object_id);
+  // virtual Json::Value search(const std::string& action,
+	// 		     const std::string& class_id,
+	// 		     const std::string& object_id);
+  // virtual Json::Value dump2JSON(const std::string& action,
+	// 			const std::string& arguments,
+	// 			const std::string& class_id,
+	// 			const std::string& host_url,
+	// 			const std::string& object_id);
+};
 
-// MyServer::MyServer(AbstractServerConnector &connector, serverVersion_t type)
-//   : server(connector, type)
-// {
-//   std::cout << "Myhw5Server Object created" << std::endl;
-// }
+MyServer::MyServer(AbstractServerConnector &connector, serverVersion_t type)
+  : server(connector, type)
+{
+  std::cout << "Myhw5Server Object created" << std::endl;
+}
 
-// // member functions
+// member functions
 
-// Json::Value
-// MyServer::move
-// (const std::string& action, const std::string& class_id,
-//  const Json::Value& json_object, const Json::Value& location,
-//  const std::string& object_id)
-// {
-//   Json::Value result;
-//   return result;
-// }
+Json::Value
+MyServer::move
+(const std::string& action, const std::string& class_id,
+ const Json::Value& json_object, const Json::Value& location,
+ const std::string& object_id)
+{
+  Json::Value result;
+  return result;
+}
 
 // Json::Value
 // MyServer::search
@@ -63,5 +63,13 @@
 // }
 
 int main(){
+  HttpServer httpserver(4000);
+  MyServer s(httpserver,
+		JSONRPC_SERVER_V1V2); // hybrid server (json-rpc 1.0 & 2.0)
+  s.StartListening();
+  std::cout << "Hit enter to stop the server" << endl;
+  getchar();
+
+  s.StopListening();
   return 0;
 }
