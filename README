@@ -13,3 +13,6 @@ run "./hw5Home"
 The program will create 1 server (GrandmaHome), 1 client (Home), and 1 server/client (Forest).
 It's important to run the programs in the given order because the server needs to set up before
 any data is sent from the client to server.
+
+Once ./hw5Home is ran, Little Red Riding Hood and the objects associated with her will be moved
+to Forest then to GrandmaHome.
