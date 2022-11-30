@@ -1,24 +1,21 @@
 LDFLAGS = -ljsoncpp -lmicrohttpd -ljsonrpccpp-common -ljsonrpccpp-server -ljsonrpccpp-client
 
-all: server client
+all: hw5Home hw5Forest hw5GrandmaHome
 
-client.h: hw5.json
-	jsonrpcstub hw5.json --cpp-server=server --cpp-client=client
+hw5Home.h: hw5.json
+	jsonrpcstub hw5.json --cpp-server=hw5Forest --cpp-client=hw5Home
 
-server.h: hw5.json
-	jsonrpcstub hw5.json --cpp-server=server --cpp-client=client
+hw5Forest.h: hw5.json
+	jsonrpcstub hw5.json --cpp-server=hw5Forest --cpp-client=hw5Home
 
-client: client.o Person.o Gps.o Thing.o Time.o Record.o json.o
-	g++ client.o Person.o Gps.o Thing.o Time.o Record.o json.o $(LDFLAGS) -o client
+hw5Home.o: hw5Home.cpp hw5Home.h
+	g++ -c hw5Home.cpp $(LDFLAGS)
 
-server: server.o Person.o Gps.o Thing.o Time.o Record.o json.o
-	g++ server.o Person.o Gps.o Thing.o Time.o Record.o json.o $(LDFLAGS) -o server
+hw5Forest.o: hw5Forest.cpp hw5Forest.h
+	g++ -c hw5Forest.cpp $(LDFLAGS)
 
-client.o: client.cpp client.h
-	g++ -c client.cpp $(LDFLAGS)
-
-server.o: server.cpp server.h
-	g++ -c server.cpp $(LDFLAGS)
+hw5GrandmaHome.o: hw5GrandmaHome.cpp hw5Forest.h
+	g++ -c hw5GrandmaHome.cpp $(LDFLAGS)
 
 json.o:		json.cpp $(INC)
 	g++ -c json.cpp
@@ -38,3 +35,14 @@ Time.o: Time.cpp Time.h
 Record.o: Record.cpp Record.h
 	g++ -c Record.cpp $(LDFLAGS)
 
+hw5Home: hw5Home.o Person.o Gps.o Thing.o Time.o Record.o json.o
+	g++ hw5Home.o Person.o Gps.o Thing.o Time.o Record.o json.o $(LDFLAGS) -o hw5Home
+
+hw5Forest: hw5Forest.o Person.o Gps.o Thing.o Time.o Record.o json.o
+	g++ hw5Forest.o Person.o Gps.o Thing.o Time.o Record.o json.o $(LDFLAGS) -o hw5Forest
+
+hw5GrandmaHome: hw5GrandmaHome.o Person.o Gps.o Thing.o Time.o Record.o json.o
+	g++ hw5GrandmaHome.o Person.o Gps.o Thing.o Time.o Record.o json.o $(LDFLAGS) -o hw5GrandmaHome
+
+clean:
+	rm -f *.o *~ core hw5home.h hw5forest.h hw5Home hw5Forest hw5GrandmaHome

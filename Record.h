@@ -2,6 +2,7 @@
 #define RECORD_H
 
 #include "common.h"
+
 #include "Thing.h"
 #include "Person.h"
 #include "Time.h"
@@ -11,14 +12,12 @@ class Record{
   private:
   public:
     int Npeople;
-    int Nthings;
 
     Person *people;
-    Thing *things;
     Time time;
     GPS gps;
     Record() {};
-    Record(Thing *, Person *, Time, GPS, int, int);
+    Record(Person *, Time, GPS, int);
     Json::Value dump2JSON();
     virtual void JSON2Object(Json::Value);
 };

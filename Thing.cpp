@@ -5,9 +5,6 @@ Thing::Thing(string tempName) {
   name = tempName;
 }
 
-string Thing::getName() {
-  return name;
-}
 Json::Value Thing::dump2JSON() {
   Json::Value result;
 

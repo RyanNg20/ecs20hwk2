@@ -6,8 +6,8 @@
 
 class Thing {
   private:
-    string name;
   public:
+    string name;
     Thing() {};
     Thing(string);
     string getName();
